@@ -12,12 +12,9 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-east-2"
+  region = var.region
 
   default_tags {
-    tags = {
-      owner      = "marden"
-      managed-by = "terraform"
-    }
+    tags = local.common_tags
   }
 }

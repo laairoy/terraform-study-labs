@@ -1,9 +1,8 @@
 resource "aws_vpc" "vpc" {
-  cidr = "10.0.0.0/16"
-  name = "my-vpc"
+  cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = terraform
+    name = "vpc-terraform"
   }
 }
 

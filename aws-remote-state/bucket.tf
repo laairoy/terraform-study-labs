@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "remote_state_bucket" {
-  bucket = "remota-state-mnlv"
+  bucket = "my-remota-state"
 }
 
 resource "aws_s3_bucket_versioning" "versioning_remote_state_bucket" {

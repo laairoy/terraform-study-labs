@@ -11,7 +11,7 @@ terraform {
 
   backend "s3" {
     bucket = "my-remota-state"
-    key    = "aws-vpc/terraform.tfstate"
+    key    = "aws-provisioners/terraform.tfstate"
     region = "us-east-2"
   }
 
@@ -23,5 +23,14 @@ provider "aws" {
 
   default_tags {
     tags = local.common_tags
+  }
+}
+
+data "terraform_remote_state" "vpc" {
+  backend = "s3"
+  config = {
+    bucket = "my-remota-state"
+    key    = "aws-vpc/terraform.tfstate"
+    region = "us-east-2"
   }
 }
